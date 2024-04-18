@@ -37,7 +37,7 @@ import {
   ResidualType,
 } from "./types/grammar_enums";
 
-export function parseNoun(msdCode: string): Substantive {
+function parseNoun(msdCode: string): Substantive {
   return {
     category: Category.Noun,
     type: stringToEnumValue(NounType, msdCode[1])!,
@@ -48,7 +48,7 @@ export function parseNoun(msdCode: string): Substantive {
   };
 }
 
-export function parseVerb(msdCode: string): Verb {
+function parseVerb(msdCode: string): Verb {
   return {
     category: Category.Verb,
     type: stringToEnumValue(VerbType, msdCode[1])!,
@@ -61,7 +61,7 @@ export function parseVerb(msdCode: string): Verb {
   };
 }
 
-export function parseAdjective(msdCode: string): Adjective {
+function parseAdjective(msdCode: string): Adjective {
   return {
     category: Category.Adjective,
     type: stringToEnumValue(AdjectiveType, msdCode[1])!,
@@ -73,7 +73,7 @@ export function parseAdjective(msdCode: string): Adjective {
   };
 }
 
-export function parseAdverb(msdCode: string): Adverb {
+function parseAdverb(msdCode: string): Adverb {
   return {
     category: Category.Adverb,
     type: stringToEnumValue(AdverbType, msdCode[1])!,
@@ -81,7 +81,7 @@ export function parseAdverb(msdCode: string): Adverb {
   };
 }
 
-export function parsePronoun(msdCode: string): Pronoun {
+function parsePronoun(msdCode: string): Pronoun {
   return {
     category: Category.Pronoun,
     type: stringToEnumValue(PronounType, msdCode[1])!,
@@ -95,7 +95,7 @@ export function parsePronoun(msdCode: string): Pronoun {
   };
 }
 
-export function parseNumeral(msdCode: string): Numeral {
+function parseNumeral(msdCode: string): Numeral {
   return {
     category: Category.Numeral,
     form: stringToEnumValue(Form, msdCode[1])!,
@@ -107,52 +107,52 @@ export function parseNumeral(msdCode: string): Numeral {
   };
 }
 
-export function parseAdposition(msdCode: string): Adposition {
+function parseAdposition(msdCode: string): Adposition {
   return {
     category: Category.Adposition,
     case: stringToEnumValue(Case, msdCode[1])!,
   };
 }
 
-export function parseConjunction(msdCode: string): Conjunction {
+function parseConjunction(msdCode: string): Conjunction {
   return {
     category: Category.Conjunction,
     type: stringToEnumValue(ConjunctionType, msdCode[1])!,
   };
 }
 
-export function parseParticle(): Particle {
+function parseParticle(): Particle {
   return {
     category: Category.Particle,
   };
 }
 
-export function parseInterjection(): Interjection {
+function parseInterjection(): Interjection {
   return {
     category: Category.Interjection,
   };
 }
 
-export function parseAbbreviation(): Abbreviation {
+function parseAbbreviation(): Abbreviation {
   return {
     category: Category.Abbreviation,
   };
 }
 
-export function parseResidual(msdCode: string): Residual {
+function parseResidual(msdCode: string): Residual {
   return {
     category: Category.Residual,
     type: stringToEnumValue(ResidualType, msdCode[1]),
   };
 }
 
-export function parsePunctuation(): Punctuation {
+function parsePunctuation(): Punctuation {
   return {
     category: Category.Punctuation,
   };
 }
 
-export function parseMsdCode(msdCode: string):
+function parseMsdCode(msdCode: string):
   | {
       category: Category;
       data:
@@ -208,3 +208,55 @@ export function parseMsdCode(msdCode: string):
       return undefined;
   }
 }
+
+export {
+  Animate,
+  Case,
+  Category,
+  Gender,
+  Number,
+  NounType,
+  Negative,
+  Person,
+  VForm,
+  Aspect,
+  VerbType,
+  AdjectiveType,
+  Definiteness,
+  AdjectiveDegree,
+  AdverbType,
+  AdverbDegree,
+  PronounType,
+  Clitic,
+  NumeralType,
+  Form,
+  ConjunctionType,
+  ResidualType,
+  parseMsdCode,
+  parseNoun,
+  parseVerb,
+  parseAdjective,
+  parseAdverb,
+  parsePronoun,
+  parseNumeral,
+  parseAdposition,
+  parseConjunction,
+  parseParticle,
+  parseInterjection,
+  parseAbbreviation,
+  parseResidual,
+  parsePunctuation,
+  Abbreviation,
+  Adjective,
+  Adposition,
+  Adverb,
+  Conjunction,
+  Interjection,
+  Numeral,
+  Particle,
+  Pronoun,
+  Punctuation,
+  Residual,
+  Substantive,
+  Verb,
+};
