@@ -1,0 +1,20 @@
+{
+  "name": "msd-slovene",
+  "version": "1.0.0",
+  "description": "Slovenian Language Morphosyntactic Descriptions Parser",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Jiří Procházka",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JiProchazka/msd-slovene"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5"
+  }
+}
