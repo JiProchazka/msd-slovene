@@ -1,6 +1,6 @@
 {
   "name": "msd-slovene",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Slovenian Language Morphosyntactic Descriptions Parser",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
