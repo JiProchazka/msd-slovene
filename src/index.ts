@@ -5,6 +5,7 @@ import { Adposition } from "./types/Adposition";
 import { Adverb } from "./types/Adverb";
 import { Conjunction } from "./types/Conjunction";
 import { Interjection } from "./types/Interjection";
+import { MsdForm } from "./types/MsdForm";
 import { Numeral } from "./types/Numeral";
 import { Particle } from "./types/Particle";
 import { Pronoun } from "./types/Pronoun";
@@ -152,25 +153,7 @@ function parsePunctuation(): Punctuation {
   };
 }
 
-function parseMsdCode(msdCode: string):
-  | {
-      category: Category;
-      data:
-        | Substantive
-        | Verb
-        | Adjective
-        | Adverb
-        | Pronoun
-        | Numeral
-        | Adposition
-        | Conjunction
-        | Particle
-        | Interjection
-        | Abbreviation
-        | Residual
-        | Punctuation;
-    }
-  | undefined {
+function parseMsdCode(msdCode: string): MsdForm {
   switch (msdCode[0]) {
     case "S":
       return { category: Category.Noun, data: parseNoun(msdCode) };
@@ -205,7 +188,7 @@ function parseMsdCode(msdCode: string):
     case "U":
       return { category: Category.Punctuation, data: parsePunctuation() };
     default:
-      return undefined;
+      throw new Error(`Unknown Category: ${msdCode[0]}`);
   }
 }
 
@@ -259,4 +242,5 @@ export {
   Residual,
   Substantive,
   Verb,
+  MsdForm,
 };
